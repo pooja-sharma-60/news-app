@@ -17,6 +17,7 @@ const NewsList = () => {
         const randomIndex = Math.floor(Math.random() * stories.length);
 
         const topStory = stories[randomIndex];
+        console.log(randomIndex)
         setNewsList((prevNews) => {
             const updatedNews = [topStory, ...prevNews.slice(0, MAX_NEWS_COUNT - 1)];
             localStorage.setItem("newsList", JSON.stringify(updatedNews));
@@ -46,24 +47,3 @@ const NewsList = () => {
 };
 
 export default NewsList;
-
-// console.log("Fetching stories.... ");
-// const newStories = await fetchTopStories();
-
-// if (newStories.length > 0) {
-//   const latestStory = newStories[0];
-//   if (!newsList.some((story) => story.url === latestStory.url)) {
-//     console.log("Adding a new story:", latestStory.title);
-
-//     setNewsList((prevNews) => {
-//       const updatedNews = [latestStory, ...prevNews].slice(0, 10);
-//       console.log(updatedNews);
-//       localStorage.setItem("newsList", JSON.stringify(updatedNews));
-//       return updatedNews;
-//     });
-//   } else{
-//       console.log("Story already exists, skipping: " , latestStory.title)
-//   }
-// } else{
-//   console.log("No new stories fetched")
-// }

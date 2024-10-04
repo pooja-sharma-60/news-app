@@ -3,18 +3,23 @@ import React from 'react';
 const NewsItem = ({ story }) => {
   return (
     <div className="bg-white shadow-md rounded-lg p-4 mb-4">
-      <div className="text-lg font-semibold text-gray-900">
+
+      <div className="text-lg font-bold text-gray-900">
         {story.title}
       </div>
-      <div className="text-gray-700 mt-2">
+      <div className="text-gray-700 mt-2 mb-4">
         {story.abstract}
       </div>
-      <a
-        href={story.url}
-        className="text-blue-500 mt-4 inline-block"
-      >
-        Read more
-      </a>
+        {story.multimedia && story.multimedia.length > 0 && (
+               
+                    <img 
+                src={story.multimedia[0].url} 
+                alt={story.title} 
+                className="w-full h-48 object-cover rounded mb-2"
+                />
+               
+            )}
+
     </div>
   );
 };
