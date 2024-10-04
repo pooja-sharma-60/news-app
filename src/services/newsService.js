@@ -5,7 +5,7 @@ export const fetchTopStories = async () => {
       const response = await fetch(url);
       if (!response.ok) throw new Error('Failed to fetch');
       const data = await response.json();
-      return data.results.slice(0, 1); 
+      return data.results
     } catch (error) {
       console.error(error);
       return [];
