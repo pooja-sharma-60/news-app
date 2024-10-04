@@ -19,7 +19,7 @@ const NewsItem = ({ story }) => {
                 />
                
             )}
-
+ 
     </div>
   );
 };
