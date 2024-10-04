@@ -3,6 +3,7 @@ import { fetchTopStories } from "../services/newsService";
 import NewsItem from "./NewsItem";
 
 const MAX_NEWS_COUNT = 10;
+
 const NewsList = () => {
   const [newsList, setNewsList] = useState(() => {
     const savedNews = JSON.parse(localStorage.getItem("newsList"));
